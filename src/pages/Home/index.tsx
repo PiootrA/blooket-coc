@@ -4,7 +4,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Home() {
-    const time = new Date(new Date("Dec 8 2023 8:00:00 PM").toLocaleString("en-US", {timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone}));
+    const estDate = new Date('Fri Dec 08 2023 20:00:00 GMT-0500');
+    const localTime = estDate.toLocaleString("en-US", { timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone });
+    const time = new Date(localTime);
     const [fullTime, setFullTime] = useState<string>("...");
     const [released, setReleased] = useState<boolean>(false);
 
